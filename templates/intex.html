@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Estudantes</title>
+</head>
+<body>
+    <h2>Cadastro de Estudantes</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Nome" required>
+        <input type="number" name="age" placeholder="Idade" required>
+        <input type="date" name="registration_date" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h3>Lista de Estudantes</h3>
+    <ul>
+        {% for student in students %}
+            <li>{{ student[1] }} - {{ student[2] }} anos - Registrado em {{ student[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
